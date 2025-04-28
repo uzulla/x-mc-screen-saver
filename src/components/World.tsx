@@ -3,7 +3,7 @@ import { useFrame } from '@react-three/fiber';
 import { createNoise2D } from 'simplex-noise';
 import * as THREE from 'three';
 
-const WORLD_SIZE = 32;
+const WORLD_SIZE = 64; // Doubled from 32 to 64
 const CHUNK_SIZE = 16;
 
 const BIOME_TYPES = {
@@ -103,10 +103,10 @@ export function World() {
 
   useFrame(({ camera }) => {
     const time = Date.now() * 0.001;
-    const radius = 20;
+    const radius = 40; // Increased from 20 to 40 for a wider view
     
     cameraPositionRef.current.x = Math.sin(time * 0.5) * radius;
-    cameraPositionRef.current.y = 15;
+    cameraPositionRef.current.y = 25; // Increased from 15 to 25 for a better overview
     cameraPositionRef.current.z = Math.cos(time * 0.5) * radius;
     
     camera.position.set(

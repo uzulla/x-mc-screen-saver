@@ -8,7 +8,7 @@ function App() {
     <div className="w-full h-screen">
       <Canvas
         camera={{
-          position: [0, 15, 20],
+          position: [0, 25, 40],
           fov: 75,
           near: 0.1,
           far: 1000
@@ -16,11 +16,11 @@ function App() {
         shadows
       >
         <Sky 
-          sunPosition={[100, 20, 100]} 
-          turbidity={10}
-          rayleigh={0.5}
-          mieCoefficient={0.005}
-          mieDirectionalG={0.7}
+          sunPosition={[100, 100, 100]} 
+          turbidity={8}
+          rayleigh={1}
+          mieCoefficient={0.001}
+          mieDirectionalG={0.8}
         />
         <ambientLight intensity={0.5} />
         <directionalLight
@@ -37,4 +37,4 @@ function App() {
   );
 }
 
-export default App
+export default App;
